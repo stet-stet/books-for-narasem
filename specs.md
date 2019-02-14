@@ -25,7 +25,7 @@
      * the keyword used to search this book.
 * the whole list will be returned in **.csv** as well as .json
      * this is because the list must be copied into Microsoft Excel.
-* **Requirement: deletion of entries initially found by certain keywords.**
+* **Requirement: deletion of entries associated with certain keywords.**
 
 ## FailedBooks
 
@@ -53,7 +53,7 @@
     * If it's not being sold, put it in FailedBooks(crit="Kyobo")
     * If it is, gather data as appropriate, then take a quick look at Narasem Lib.(Use http://lib1.kostat.go.kr/)
         * If the book's there, put it in FailedBooks(crit="Narasem")
-        * If it's not, then put it in Books with appropriate data.
+        * If it's not, then put it in Books(with appropriate data)
 5. User may retrieve needed data which may include:
     * the whole list of Books, .csv
     * the whole list of unsold-at-Kyobo Books , .csv
