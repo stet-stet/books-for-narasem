@@ -1,10 +1,12 @@
 # tools I will use
 
 * **language: python 3.6**
+* github
 * this API(https://developers.naver.com/docs/search/book/)
 * Django-REST framework (+PostgreSQL)
+    * Django-rest-framework-csv
 * python-requests
-* an AWS server.
+* an AWS server. (And yes, I know that some, including Heroku, hosts PaaSes for django.)
 
 # models 
 
@@ -21,26 +23,10 @@
      * Author
      * Publisher
      * Year published
-     * price(at Kyobo bookstores)
+     * price(Kyobo bookstores)
      * the keyword used to search this book.
 * the whole list will be returned in **.csv** as well as .json
-     * this is because the list must be copied into Microsoft Excel.
-* **Requirement: deletion of entries associated with certain keywords.**
-
-## FailedBooks
-
-* the books listed here
-    * show up on the aforementioned API
-    * but fail to satisfy one or more criteria.
-* database fields
-    * **ISBN**
-    * Book title
-    * the criterion it failed to meet
-* the model will provide access to
-    * the original titles of the books(.json and .csv)
-    * list of entries not sold at Kyobo(.json and .csv)
-    * list of entries sold at Kyobo but in the library(.json and .csv)
-    
+     * this is because the list must be copied into Microsoft Excel.    
 
 # Mechanism
 
@@ -60,17 +46,8 @@
 6. User may choose to delete/wipe
     * the whole list of FailedBooks
     * Some Books found by a certain keyword.
-7. Remember, **the user does not have access to anything except Chrome and Excel.**
-
-
-# comments
-The library doesn't provide ISBN data. Unbelievable.
-This complicates things a lot. 
+7. **the user does not have access to anything except Chrome and Excel.**
+ 
 
 # deadline
-2019.2.18(Mon)
-
-# policy
-
-I will turn this repo private as I commit the bit containing Naver API Client ID/Secret.
-I will some reusable components in a separate repo.
+~~2019.2.20(Wed)~~ will continue.
