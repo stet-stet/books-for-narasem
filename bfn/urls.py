@@ -1,9 +1,14 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register(r'list', views.BooksViewSet)
+
 
 urlpatterns = [
-    path('search/<str:word>/', views.entry_point),
-    path('delete/<str:word>/', views.delete_point),
-    path('list/', views.BooksList.as_view()),
-    path('list/<int:pk>', views.BooksDetail.as_view())
+    path('',include(router.urls)),
+    path('search/<str:key_word>/', views.entry_point),
+    path('delete/<str:key_word>/', views.delete_point),
 ]

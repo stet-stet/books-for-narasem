@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 from time import sleep
 
 def search_narasem(title,author,year):
+    print(title)
+    print("-----------")
     headers={
         "Accept": "text/html",
         "Accept-encoding": "gzip, deflate",
@@ -14,7 +16,7 @@ def search_narasem(title,author,year):
     s = requests.Session()
     s.get("http://lib1.kostat.go.kr/")
     s.headers = headers
-    s.params = {"st":"KWRD", "si":"TOTAL", "q":' '.join([title,author])}
+    s.params = {"st":"KWRD", "si":"TOTAL", "q":' '.join([title, author])}
     r = s.get("http://lib1.kostat.go.kr/search/tot/result", timeout=20)
     sleep(3)
     return r.text.find("divNoResult") == -1

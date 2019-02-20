@@ -5,7 +5,7 @@ from bfn.models import Books, FailedBooks
 class BooksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Books
-        fields = ('isbn', 'title', 'author', 'publisher', 'year', 'price')
+        fields = ('isbn', 'title', 'author', 'publisher', 'year', 'price', 'keyword')
 
 
 class FailedBooksSerializer(serializers.ModelSerializer):
